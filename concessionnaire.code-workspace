@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "concessionnaire"
+		}
+	],
+	"settings": {
+		"python.linting.pylamaArgs": [
+			"--load-plugins",
+			"py;int_django"
+		]
+	}
+}

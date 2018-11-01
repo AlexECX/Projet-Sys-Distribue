@@ -1,0 +1,26 @@
+from django.db import models
+from django.shortcuts import reverse
+
+
+# Create your models here.
+
+class Voiture(models.Model):
+    no_serie = models.IntegerField()
+    marque = models.CharField(max_length=25)
+    modele = models.CharField(max_length=25)
+    COLOR_CHOICE = (
+        ('Bl', 'Bleu'),
+        ('Ro', 'Rouge'),
+        ('Ja', 'Jaune'),
+        ('No', 'Noir'),
+        ('Blc', 'Blanc'),
+        ('Gr', 'Gris'),
+        ('Ve', 'Vert'),
+    )
+    couleur = models.CharField(max_length=4, choices=COLOR_CHOICE)
+    annee = models.DateField()
+    poids = models.IntegerField()
+    prix = models.FloatField()
+
+    def get_absolute_url(self):
+        return reverse('magasin:voiture-detail', kwargs={'pk': self.pk})

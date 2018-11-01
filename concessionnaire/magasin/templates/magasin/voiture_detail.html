@@ -1,0 +1,11 @@
+{% extends "magasin/base.html" %}
+{% block content %}
+<p>No Series: {{voiture.no_serie}}</p>
+<p>Marque: {{voiture.marque}}</p>
+<p>Modele: {{voiture.modele}}</p>
+<p>Couleur: {{voiture.get_couleur_display}}</p>
+<p>Annee: {{voiture.annee}}</p>
+<p>Poids: {{voiture.poids}}</p>
+<p>Prix: {{voiture.prix}}</p>
+
+{% endblock content %}
