@@ -1,6 +1,9 @@
 {% extends "magasin/base.html" %}
 {% block content %}
 
+<h1>Ajouter une voiture</h1>
+<a href="/">Accueil</a>
+<br><br>
 
 <form role="form" class="form" method="{% block form_method %}post{% endblock %}" enctype="multipart/form-data">
     {% csrf_token %}
@@ -20,7 +23,7 @@
     {% endfor %}
     {% for field in form.hidden_fields %}{{field}}{% endfor %}
     <div class="col-md-12">
-        <button type="submit" class="btn btn-success">submit</button>
+        <button type="submit" class="btn btn-success">Soumettre</button>
     </div>
 </form>
 

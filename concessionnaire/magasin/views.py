@@ -3,6 +3,7 @@ from django.urls import reverse_lazy
 from django.views.generic import DetailView, ListView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 
+from fnmatch import filter
 from magasin.models import Voiture
 
 
@@ -26,4 +27,8 @@ class VoitureDetail(DetailView):
     fields = '__all__'
 
 class VoitureList(ListView):
-    pass
+    model = Voiture
+    context_object_name = 'voiture_list'
+    fields = '__all__'
+    def get_queryset(self):
+        return Voiture.objects.all()
