@@ -1,6 +1,8 @@
 from django.db import models
 from django.shortcuts import reverse
 
+#from magasin.views import Voiture, Facture
+
 
 # Create your models here.
 
@@ -24,3 +26,14 @@ class Voiture(models.Model):
 
     def get_absolute_url(self):
         return reverse('magasin:voiture-detail', kwargs={'pk': self.pk})
+
+class Facture(models.Model):
+    voitureVendue = models.ForeignKey(
+        'Voiture',
+        on_delete=models.DO_NOTHING,
+    )
+    montant = models.FloatField()
+    nom_acheteur = models.CharField(max_length=50)
+
+    def get_absolute_url(self):
+        return reverse('magasin:facture-detail', kwargs={'pk': self.pk})

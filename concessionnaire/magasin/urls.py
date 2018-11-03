@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import TemplateView
 
-from magasin.views import VoitureCreate, VoitureDelete, VoitureDetail, VoitureUpdate, VoitureList
+from magasin.views import VoitureCreate, VoitureDelete, VoitureDetail, VoitureUpdate, VoitureList, FactureList, FactureDetail, VoitureVendre
 
 app_name = 'magasin'
 urlpatterns = [
@@ -25,7 +25,8 @@ urlpatterns = [
     path('voiture/add/', VoitureCreate.as_view(), name='voiture-add'),
     path('voiture/list/', VoitureList.as_view(), name='voiture-list'),
     path('voiture/<int:pk>/', VoitureDetail.as_view(), name='voiture-detail'),
-    path('voiture/<int:pk>/update/', VoitureUpdate.as_view(), name='voiture-update'),
+    path('voiture/<int:pk>/vendre/', VoitureVendre.as_view(), name='voiture-vendre'),
     path('voiture/<int:pk>/delete/', VoitureDelete.as_view(), name='voiture-delete'),
-    
+    path('facture/list/', FactureList.as_view(), name='facture-list'),
+    path('facture/<int:pk>/', FactureDetail.as_view(), name='facture-detail'),
 ]
