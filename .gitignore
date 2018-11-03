@@ -1,3 +1,4 @@
 concessionnaire/magasin/__pycache__/*
 concessionnaire/magasin/migrations/*
 concessionnaire/concessionnaire/__pycache__/*
+*.pyc
