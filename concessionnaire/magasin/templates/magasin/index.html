@@ -2,7 +2,9 @@
 {% block content %}
 <h1>Index Magasin</h1>
 <br>
-<a href="/magasin/voiture/add">Ajouter une voiture</a>
+<a href="{% url 'magasin:voiture-add' %}">Ajouter une voiture</a>
 <br><br>
-<a href="/magasin/voiture/list">Liste des voitures</a>
+<a href="{% url 'magasin:voiture-list' %}">Liste des voitures</a>
+<br><br>
+<a href="{% url 'magasin:facture-list' %}">Liste des factures</a>
 {% endblock content %}

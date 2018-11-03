@@ -1,0 +1,20 @@
+{% extends "magasin/base.html" %}
+{% block content %}
+
+
+<h1>Liste des factures</h1>
+<a href="/">Accueil</a>
+<br><br>
+  {% if facture_list %}
+  <ul>
+    {% for facture in facture_list %}
+      <li>
+        <p><a href="{{ facture.get_absolute_url }}">Voir: {{ facture.id }}</a> </p>
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>Aucune facture à afficher.</p>
+  {% endif %}       
+
+{% endblock content %}

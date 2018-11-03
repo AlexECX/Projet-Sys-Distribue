@@ -1,7 +1,7 @@
 {% extends "magasin/base.html" %}
 {% block content %}
 
-<h1>Ajouter une voiture</h1>
+<h1>Vendre une voiture</h1>
 <a href="/">Accueil</a>
 <br><br>
 
@@ -22,8 +22,9 @@
         </div>
     {% endfor %}
     {% for field in form.hidden_fields %}{{field}}{% endfor %}
+    <input type="number" name="voitureVendure" step="any" required is="id_voitureVendue" hidden="true" value="">
     <div class="col-md-12">
-        <button type="submit" class="btn btn-success">Soumettre</button>
+        <button type="submit" class="btn btn-success">Vendre la voiture</button>
     </div>
 </form>
 

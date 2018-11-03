@@ -9,7 +9,7 @@
   <ul>
     {% for voiture in voiture_list %}
       <li>
-        <p><a href="{{ voiture.get_absolute_url }}">Voir: {{ voiture.no_serie }}</a> --> Actions: <a href="#">Vendre</a> -- <a href="{% url 'magasin:voiture-delete' voiture.id %}">Supprimer</a></p>
+        <p><a href="{{ voiture.get_absolute_url }}">Voir: {{ voiture.no_serie }}</a> --> Actions: <a href="{% url 'magasin:voiture-vendre' voiture.id %}">Vendre</a> -- <a href="{% url 'magasin:voiture-delete' voiture.id %}">Supprimer</a></p>
         <p>Marque: {{voiture.marque}} | Modele: {{voiture.modele}}</p>
       </li>
     {% endfor %}
