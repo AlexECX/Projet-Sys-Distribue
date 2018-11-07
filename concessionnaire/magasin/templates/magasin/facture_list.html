@@ -9,7 +9,8 @@
   <ul>
     {% for facture in facture_list %}
       <li>
-        <p><a href="{{ facture.get_absolute_url }}">Voir: {{ facture.id }}</a> </p>
+        <p><a href="{{ facture.get_absolute_url }}">
+			Facture no: {{ facture.id }} Nom acheteur: {{ facture.nom_acheteur }}</a> </p>
       </li>
     {% endfor %}
   </ul>

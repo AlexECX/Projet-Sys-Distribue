@@ -17,12 +17,12 @@ from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import TemplateView
 
-from magasin.views import VoitureCreate, VoitureDelete, VoitureDetail, VoitureUpdate, VoitureList, FactureList, FactureDetail, VoitureVendre
+from magasin.views import VoitureAdd, VoitureDelete, VoitureDetail, VoitureUpdate, VoitureList, FactureList, FactureDetail, VoitureVendre
 
 app_name = 'magasin'
 urlpatterns = [
     path('', TemplateView.as_view(template_name='magasin/index.html'), name='index'),
-    path('voiture/add/', VoitureCreate.as_view(), name='voiture-add'),
+    path('voiture/add/', VoitureAdd.as_view(), name='voiture-add'),
     path('voiture/list/', VoitureList.as_view(), name='voiture-list'),
     path('voiture/<int:pk>/', VoitureDetail.as_view(), name='voiture-detail'),
     path('voiture/<int:pk>/vendre/', VoitureVendre.as_view(), name='voiture-vendre'),

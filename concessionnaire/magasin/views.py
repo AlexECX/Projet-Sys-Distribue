@@ -9,7 +9,7 @@ from magasin.models import Voiture, Facture
 
 
 # Create your views here.
-class VoitureCreate(CreateView):
+class VoitureAdd(CreateView):
     model = Voiture
     fields = '__all__'
 
@@ -37,9 +37,14 @@ class VoitureList(ListView):
     fields = '__all__'
 
     def get_queryset(self):
-        return Voiture.objects.filter(
+        self.queryset = Voiture.objects.filter(
             ~Q(id__in=Facture.objects.values_list('voitureVendue_id', flat=True))
         )
+        return super().get_queryset()
+
+    def get_ordering(self):
+        ordering = self.request.GET.get('orderby', 'no_serie')
+        return ordering
 
 
 class VoitureVendre(CreateView):

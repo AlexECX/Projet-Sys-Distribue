@@ -3,7 +3,10 @@
 
 
 <h1>Liste des voitures</h1>
-<a href="/">Accueil</a>
+<a href="/">Accueil</a><br>
+<a href="{% url 'magasin:voiture-list' %}">Afficher par no de série</a><br>
+<a href="{% url 'magasin:voiture-list' %}?orderby=marque">Afficher par marque</a><br>
+<a href="{% url 'magasin:voiture-list' %}?orderby=modele">Afficher par modele</a><br>
 <br><br>
   {% if voiture_list %}
   <ul>

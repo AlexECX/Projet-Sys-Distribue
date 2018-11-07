@@ -7,7 +7,7 @@ from django.shortcuts import reverse
 # Create your models here.
 
 class Voiture(models.Model):
-    no_serie = models.IntegerField()
+    no_serie = models.IntegerField(unique=True)
     marque = models.CharField(max_length=25)
     modele = models.CharField(max_length=25)
     COLOR_CHOICE = (
@@ -26,6 +26,7 @@ class Voiture(models.Model):
 
     def get_absolute_url(self):
         return reverse('magasin:voiture-detail', kwargs={'pk': self.pk})
+
 
 class Facture(models.Model):
     voitureVendue = models.ForeignKey(
