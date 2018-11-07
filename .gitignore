@@ -1,4 +1,9 @@
-concessionnaire/magasin/__pycache__/*
+__pycache__/
 concessionnaire/magasin/migrations/*
 concessionnaire/concessionnaire/__pycache__/*
+**/__pycache__
+
 *.pyc
+*.cpython-36.pyc
+
+concessionnaire/concessionnaire/__pycache__/urls.cpython-37.pyc
