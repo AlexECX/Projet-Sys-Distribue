@@ -61,6 +61,10 @@ class FactureList(ListView):
     context_object_name = 'facture_list'
     fields = '__all__'
 
+    def get_ordering(self):
+        ordering = self.request.GET.get('orderby', 'id')
+        return ordering
+
 
 class FactureDetail(DetailView):
     model = Facture

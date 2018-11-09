@@ -3,14 +3,16 @@
 
 
 <h1>Liste des factures</h1>
-<a href="/">Accueil</a>
+<a href="/">Accueil</a><br>
+<a href="{% url 'magasin:facture-list' %}">Afficher par ID</a><br>
+<a href="{% url 'magasin:facture-list' %}?orderby=nom_acheteur">Afficher par nom d'acheteur</a><br>
 <br><br>
   {% if facture_list %}
   <ul>
     {% for facture in facture_list %}
       <li>
         <p><a href="{{ facture.get_absolute_url }}">
-			Facture no: {{ facture.id }} Nom acheteur: {{ facture.nom_acheteur }}</a> </p>
+			Facture no: {{ facture.id }}</a> Nom acheteur: {{ facture.nom_acheteur }} </p>
       </li>
     {% endfor %}
   </ul>
