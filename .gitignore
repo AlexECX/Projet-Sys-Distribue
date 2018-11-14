@@ -1,7 +1,9 @@
 __pycache__/
+concessionnaire/dist
+concessionnaire/build
 concessionnaire/magasin/migrations/*
 concessionnaire/concessionnaire/__pycache__/*
-
+*.sqlite3
 *.pyc
 *.cpython-36.pyc
 
